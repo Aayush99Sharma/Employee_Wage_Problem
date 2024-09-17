@@ -32,3 +32,8 @@ def employee_wage(employee_type):
 
 employee_type = random.choice([0, 1, 2])  # 0: Absent, 1: Full-time, 2: Part-time
 print(f"Employee Wage: {employee_wage(employee_type)}")
+
+#UC5 : Calculate Wages for a Month
+working_days_per_month = 20
+monthly_wage = working_days_per_month * daily_wage
+print(f"Monthly Employee Wage: {monthly_wage}")
