@@ -52,3 +52,22 @@ total_wage = total_working_hours * wage_per_hour
 print(f"Total Employee Wage for the Month: {total_wage}")
 
 
+#UC : 7 Refactor code using class method
+class EmployeeWageComputation:
+    wage_per_hour = 20
+    full_day_hour = 8
+    part_time_hour = 4
+
+    @classmethod
+    def calculate_wage(cls, employee_type):
+        if employee_type == 1:  # Full-time
+            return cls.full_day_hour * cls.wage_per_hour
+        elif employee_type == 2:  # Part-time
+            return cls.part_time_hour * cls.wage_per_hour
+        else:
+            return 0  # Absent
+
+employee_type = random.choice([0, 1, 2])  # 0: Absent, 1: Full-time, 2: Part-time
+wage = EmployeeWageComputation.calculate_wage(employee_type)
+print(f"Employee Wage: {wage}")
+
